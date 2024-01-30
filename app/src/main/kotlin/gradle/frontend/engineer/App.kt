@@ -3,13 +3,29 @@
  */
 package gradle.frontend.engineer
 
+import kotlin.io.readLine
+
 class App {
-    val greeting: String
-        get() {
-            return "Hello World!"
+    fun run() {
+        println("What would you like?")
+        println("1. Get info about the candidate")
+        println("2. Hear a joke")
+
+        print("Choose one [1] or [2]: ")
+        val choice = readLine()?.toIntOrNull()
+
+        println("---")
+
+        when (choice) {
+            1 -> printCandidateInfo()
+            2 -> printJoke()
+            else -> println("Invalid choice. Please enter a number between 1 and 2.")
         }
+
+        println("---")
+    }
 }
 
 fun main() {
-    println(App().greeting)
+    App().run()
 }

@@ -9,7 +9,16 @@
 plugins {
     // Apply the foojay-resolver plugin to allow automatic download of JDKs
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
+    id("com.gradle.enterprise") version("3.16.2")
 }
 
 rootProject.name = "gradle-frontend-engineer"
 include("app")
+
+
+gradleEnterprise {
+    buildScan {
+        tag("frontend-engineer")
+    }
+
+}
